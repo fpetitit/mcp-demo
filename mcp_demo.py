@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import Dict, Any, List
 import json
 
-app = FastAPI(title="MCP Demo Viry")
+app = FastAPI(title="MCP Demo Annuaire Entreprises")
 
 class ToolSchema(BaseModel):
     name: str
@@ -11,7 +11,7 @@ class ToolSchema(BaseModel):
     inputSchema: Dict[str, Any]
 
 class MCPSchema(BaseModel):
-    name: str = "Viry Entreprises MCP"
+    name: str = "Annuaire Entreprises MCP"
     description: str = "Démo MCP secteur public"
     tools: List[ToolSchema] = []
 
@@ -21,7 +21,7 @@ async def mcp_schema():
         tools=[
             ToolSchema(
                 name="trouver_entreprise",
-                description="Recherche entreprise à Viry-Châtillon",
+                description="Recherche entreprise dans l'annuaire",
                 inputSchema={
                     "type": "object",
                     "properties": {"nom": {"type": "string", "description": "Nom entreprise"}},
