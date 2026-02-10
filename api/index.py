@@ -1,4 +1,6 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
+from pydantic import BaseModel
+from typing import Dict, Any, List
 
 app = FastAPI(title="MCP Demo")
 
